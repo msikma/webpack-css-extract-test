@@ -11,12 +11,20 @@ module.exports = {
   },
   module: {
     loaders: [
+      // Comment out the following section and uncomment the one after that
+      // to test CSS-in-JS rather than CSS in a separate file.
       {
         test  : /\.scss$/,
         loader: ExtractTextPlugin.extract(
           'style-loader', 'css-loader!sass-loader?outputStyle=expanded'
         )
       },
+      /*
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass?outputStyle=expanded'
+      },
+      */
       {
         test: /\.png$/,
         loader: 'url-loader?mimetype=image/png'
